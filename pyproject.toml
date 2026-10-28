@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gbt-anim-fix"
+version = "1.0.0"
+description = "GBT V8 capability bit: anim_fix (creation). Contract, validation and CLI."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "GBT V8 contributors" }]
+keywords = ["gbt", "capability", "agent", "creation", "anim_fix"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+gbt-anim-fix = "gbt_anim_fix.cli:main"
+
+[project.urls]
+Atlas = "https://github.com/gbtweilai-star/gbt-caps/blob/main/caps/creation/anim_fix.md"
+Index = "https://github.com/gbtweilai-star/gbt-caps"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "--tb=short"
